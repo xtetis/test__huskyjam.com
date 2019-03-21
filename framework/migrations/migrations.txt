@@ -1,0 +1,22 @@
+
+
+
+
+./yii migrate/create create_carriers_table --fields="id:primaryKey,name:string(200),active:integer:defaultValue(1)"
+
+./yii migrate/create create_stations_table --fields="id:primaryKey,name:string(200),active:integer:defaultValue(1)"
+
+
+./yii migrate/create create_schedules_table --fields="id:primaryKey,start_station_id:integer:notNull:foreignKey(stations),end_station_id:integer:notNull:foreignKey(stations),carrier_id:integer:notNull:foreignKey(carriers),start_time:time,end_time:time,price:float"
+
+
+./yii migrate/create create_days_table --fields="id:primaryKey,id_schedule:integer:notNull:foreignKey(schedules),day_of_week:integer:notNull"
+
+
+
+
+
+
+
+
+./yii migrate
